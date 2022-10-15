@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -165,7 +166,7 @@ namespace SaintCoinach.Graphics.Viewer {
             Device.ImmediateContext.ClearRenderTargetView(_ScreenshotTargetView, Color.Transparent);
             base.Draw(time);
 
-            Texture2D.ToFile(Device.ImmediateContext, _ScreenshotTarget, ImageFileFormat.Png, string.Format("SS-{0:yyyyMMdd-HHmmss}.png", DateTime.Now));
+            TextureUtil.ToFile(Device.ImmediateContext, _ScreenshotTarget, ImageFormat.Png, string.Format("SS-{0:yyyyMMdd-HHmmss}.png", DateTime.Now));
             ResizeToClient();
         }
         protected override void Update(EngineTime time) {

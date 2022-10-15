@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace SaintCoinach.Graphics.Viewer {
     using SharpDX;
     using SharpDX.Direct3D11;
+    using System.Drawing.Imaging;
 
     public class ImageRenderer : Engine {
         #region Input service
@@ -35,13 +36,13 @@ namespace SaintCoinach.Graphics.Viewer {
         private IImageRendererSource _Source;
         private int _RenderWidth;
         private int _RenderHeight;
-        private ImageFileFormat _OutputFormat;
+        private ImageFormat _OutputFormat;
         private Color _BackgroundColor;
         #endregion
 
         #region Constructor
-        public ImageRenderer(IImageRendererSource source, int renderWidth, int renderHeight) : this(source, renderWidth, renderHeight, ImageFileFormat.Png, Color.Transparent) { }
-        public ImageRenderer(IImageRendererSource source, int renderWidth, int renderHeight, ImageFileFormat outputFormat, Color backgroundColor) {
+        public ImageRenderer(IImageRendererSource source, int renderWidth, int renderHeight) : this(source, renderWidth, renderHeight, ImageFormat.Png, Color.Transparent) { }
+        public ImageRenderer(IImageRendererSource source, int renderWidth, int renderHeight, ImageFormat outputFormat, Color backgroundColor) {
             _Source = source;
             _RenderWidth = renderWidth;
             _RenderHeight = renderHeight;
@@ -137,7 +138,7 @@ namespace SaintCoinach.Graphics.Viewer {
                 _Source.CurrentTargetFile.Directory.Create();
 
             var ext = "." + _OutputFormat.ToString().ToLower();
-            SharpDX.Direct3D11.Texture2D.ToFile(Device.ImmediateContext, RenderTarget, _OutputFormat, _Source.CurrentTargetFile.FullName + ext);
+            TextureUtil.ToFile(Device.ImmediateContext, RenderTarget, _OutputFormat, _Source.CurrentTargetFile.FullName + ext);
         }
 
         protected override void Draw(EngineTime time) {

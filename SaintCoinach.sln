@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaintCoinach.Cmd", "SaintCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Godbert", "Godbert\Godbert.csproj", "{6A5DA7FF-791E-4A43-BF65-B6942917F7D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaintCoinach.Graphics.Viewer", "SaintCoinach.Graphics.Viewer\SaintCoinach.Graphics.Viewer.csproj", "{DBF58DB0-8A11-4D2D-8C8B-A1959E771335}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaintCoinach.Graphics.Viewer", "SaintCoinach.Graphics.Viewer\SaintCoinach.Graphics.Viewer.csproj", "{DBF58DB0-8A11-4D2D-8C8B-A1959E771335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,11 +34,9 @@ Global
 		{F9681545-4BEA-4FD3-9AB9-A67BD37AB36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9681545-4BEA-4FD3-9AB9-A67BD37AB36D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{957699E4-8310-4D1E-BA83-13B7A4932807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{957699E4-8310-4D1E-BA83-13B7A4932807}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{957699E4-8310-4D1E-BA83-13B7A4932807}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{957699E4-8310-4D1E-BA83-13B7A4932807}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A5DA7FF-791E-4A43-BF65-B6942917F7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A5DA7FF-791E-4A43-BF65-B6942917F7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A5DA7FF-791E-4A43-BF65-B6942917F7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A5DA7FF-791E-4A43-BF65-B6942917F7D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DBF58DB0-8A11-4D2D-8C8B-A1959E771335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -50,7 +48,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45
 		SolutionGuid = {38B9D19B-5177-445E-8E3F-6C69A809DAB9}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

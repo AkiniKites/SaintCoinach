@@ -203,14 +203,15 @@ namespace SaintCoinach.Ex.Relational.Update {
             if (_PreviousSheet.Header.Variant == 2)
                 return MatchVariant2Rows(defUpdaters, comparers);
 
+            var sortedPrevCols = _PreviousSheet.Header.Columns.OrderBy(_ => _.Index).ToList();
+            var sortedUpdatedCols = _UpdatedSheet.Header.Columns.OrderBy(_ => _.Index).ToList();
+
             foreach (IRow prevRow in _PreviousSheet) {
                 if (!_UpdatedSheet.ContainsRow(prevRow.Key)) continue;
 
-                var prevRowFields =
-                    _PreviousSheet.Header.Columns.OrderBy(_ => _.Index).Select(_ => prevRow[_.Index]).ToArray();
+                var prevRowFields = sortedPrevCols.Select(_ => prevRow[_.Index]).ToArray();
                 var updatedRow = _UpdatedSheet[prevRow.Key];
-                var updatedRowFields =
-                    _UpdatedSheet.Header.Columns.OrderBy(_ => _.Index).Select(_ => updatedRow[_.Index]).ToArray();
+                var updatedRowFields = sortedUpdatedCols.Select(_ => updatedRow[_.Index]).ToArray();
 
                 foreach (var def in defUpdaters)
                     def.MatchRow(prevRowFields, updatedRowFields, comparers);
